@@ -1,15 +1,19 @@
 <html>
   
   <head>
-    <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/atelier-sulphurpool-dark.css">
-    <script src="https://highlightjs.org/static/highlight.site.pack.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" href="https://codemirror.net/lib/codemirror.css">
+    <link rel="stylesheet" href="https://codemirror.net/theme/material.css">
+    <script src="https://codemirror.net/lib/codemirror.js"></script>
+    <script>
+      var editor = CodeMirror.fromTextArea(code, {
+        lineNumbers: true
+      });
+    </script>
     <style>html, body, pre, code {margin:0 !important;}</style>
   </head>
   
   <body>
-    <pre>
-      <code class="yaml hljs">
+<textarea id="code">
 ---
 # engineering microsite
 
@@ -39,8 +43,7 @@ job:
   infrastructure: [ AWS, Lambda, Redis ]
   techniques: [ OOP, Clean Code, Unit Testing ]
 
-      </code>
-    </pre>
+</textarea>
   </body>
 
 </html>

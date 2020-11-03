@@ -4,46 +4,147 @@
     <link rel="stylesheet" href="https://codemirror.net/lib/codemirror.css">
     <link rel="stylesheet" href="https://codemirror.net/theme/material.css">
     <script src="https://codemirror.net/lib/codemirror.js"></script>
-    <script>
-      var editor = CodeMirror.fromTextArea(code, {
-        lineNumbers: true
-      });
-    </script>
-    <style>html, body, pre, code {margin:0 !important;}</style>
+    <script src="https://codemirror.net/mode/yaml/yaml.js"></script>
+    
+    <style>
+    html, body, pre, code { margin:0 !important; }
+    .CodeMirror { height: 100%; }
+
+
+    </style>
   </head>
   
   <body>
-<textarea id="code">
----
-# engineering microsite
+    <form>
+        <textarea id="code" name="code">
+    --- # Engineering microsite described by YAML
 
-story: >
-  "
-  It started as a big dream of a small Czech startup Brand Embassy,
-  to build the best product for digital customer support.
-  
-  So no matter what app, website, device customers use to contact a company,
-  the message will always land. WhatsApp, Twitter, a review at Google maps review, comment on YouTube, you name it.
-  
-  Over time, we have integrated the biggest number of services on the market and even hacked WhatsApp to offer this service before they unveiled their public API. 
-  Several years later, Czechcrunch wrote about Brand Embassy's successful exit and acquisition by a USA leader for customer support tool - NICE InContact.
-  Now, we write a new era of the big dream getting even bigger - to become a global leader. 
-  "
+    story: |
 
-highlights:
-  - patents: Registered over XXXX patents     
-  - branching: trunk based development & continous delivery process
-  - hackathons: 4 two-day hackathons per year
-  - holiday: unlimeted number of payed holidys
+            ____________________________________
+        /                                    \
+        |  WELCOME TO ENGINEERING MICROSITE  |
+        \                                   /
+            -----------------------------------
+                \   ^__^
+                \  (oo)\_______
+                    (__)\       )\/\
+                        ||----w |
+                        ||     ||
 
 
-job:
-  title: Senior PHP Developer
-  technologies:  [ Docker, PHP 7.2, ELK Stack, SLIM, RabbitMQ, Ansible ]
-  infrastructure: [ AWS, Lambda, Redis ]
-  techniques: [ OOP, Clean Code, Unit Testing ]
+        It started as a big dream of a small Czech startup Brand Embassy,
+        to build the best product for digital customer support.
 
-</textarea>
-  </body>
+        So no matter what app, website, device customers use to contact a company,
+        the message will always land. WhatsApp, Twitter, a review at Google maps review,
+        comment on YouTube, you name it.
+
+        Over time, we have integrated the biggest number of services on the market
+        and even hacked WhatsApp to offer this service before they unveiled their public API. 
+        Several years later, Czechcrunch wrote about Brand Embassy's successful exit
+        and acquisition by a USA leader for customer support tool - NICE InContact.
+        Now, we write a new era of the big dream getting even bigger - to become a global leader. 
+        
+
+    highlights:
+        - opensource: [ "We have oupensourced some of our work", "https://git.io/JT9vW" ]
+        - patents: registered over XXXX patents
+        - branching: trunk based development & continous delivery process
+        - hackathons: 4 two-day hackathons per year
+        - holiday: unlimeted number of payed holidys
+        - techstack: modern Amazon cloud technologies such as Lamda, Kinessis, Gateway, ELK, Kubernetes
+
+
+    contact:
+        email: martin.jarcik@niceincontact.com
+        
+
+    --- # Senior PHP Developer 
+
+    job1cover:	|
+        
+                ___     _,.--.,_
+            .-~   ~--"~-.   ._ "-.
+            /      ./_    Y    "-. \
+            Y       :~     !         Y
+            lq p    |     /         .|
+        _   \. .-, l    /          |j
+        ()\___) |/   \_/";          !
+        \._____.-~\  .  ~\.      ./
+                    Y_ Y_. "vr"~  T
+                    (  (    |L    j   
+                    [nn[nn..][nn..]
+                ~~~~~~~~~~~~~~~~~~~~~~~
+
+    job1:
+        title: Senior PHP Developer
+        technologies:  [ Docker, PHP 7.2, Elastic Search, SLIM, RabbitMQ, Ansible ]
+        techniques: [ OOP, Clean Code, Unit Testing ]
+        task:
+            - build new features (and fix bugs)
+            - optimise app for high traffic and scale
+            - refactor some legacy code
+        
+        
+    --- # Senior JS Developer 
+
+    job2cover:	|
+        
+            _____ ____
+            `----,\    )
+            `--==\\  /
+            `--==\\/
+            .-~~~~-.Y|\\_
+        @_/        /  66\_
+            |    \   \   _(")
+            \   /-| ||'--'
+            \_\  \_\\
+
+    job2:
+        title: Senior JS Developer
+        technologies:  [ Docker, React 16, TypeScript, Ansible ]
+        techniques: [ Clean Code, Unit Testing ]
+        task:
+            - build new features (and fix bugs)
+            - optimise app for high traffic and scale
+            - refactor some legacy code
+
+
+    --- # Senior QA  
+
+    job3cover:	|
+        
+        _______\)%%%%%%%%._              
+        `''''-'-;   % % % % %'-._         
+                :b) \            '-.      
+                : :__)'    .'    .'       
+                :.::/  '.'   .'           
+                o_i/   :    ;             
+                        :   .'             
+                        ''`    
+    job3:
+        title: Senior QA
+        technologies:  [ Cypress, JavaScript, Python, Ansible ]
+        techniques: [ Integration Testing, Unit Testing ]
+        task:
+            - build new automated tests of different kind with variate of technologies
+            - optimise the testing environment to be easy for engineers
+            - E2E systematic perspective for quality
+            - driving QA agenda
+        
+                        
+        </textarea>
+    </form>
+
+    <script>
+        var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+        lineNumbers: true,
+        mode: {name: "yaml", globalVars: true}
+        });
+        editor.setOption("theme", 'material');
+    </script>
+
+</body>
 
 </html>
